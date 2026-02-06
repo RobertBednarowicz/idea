@@ -1,0 +1,31 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Models;
+
+use App\Enums\IdeaStatus;
+use Database\Factories\IdeaFactory;
+use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Idea extends Model
+{
+    /** @use HasFactory<IdeaFactory> */
+    use HasFactory;
+
+    protected function casts(): array
+    {
+        return [
+            'links' => AsArrayObject::class,
+            'status' => IdeaStatus::class,
+        ];
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}
