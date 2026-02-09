@@ -1,0 +1,18 @@
+button {
+    @apply inline-flex justify-center items-center cursor-pointer;
+}
+
+.btn {
+    @apply inline-flex justify-center items-center px-4 py-2 font-medium text-text bg-accent hover:bg-accent-muted rounded-lg transition-colors duration-300;
+    
+}
+
+.btn.btn-outlined {
+    @apply text-text dark:text-text-dark bg-transparent hover:bg-background-dark/10 hover:dark:bg-background/10 border-2 border-background-dark/50 dark:border-background/30;
+}
+
+.btn:has(> svg) {
+    display: flex;
+    align-items: center;
+    column-gap: calc(var(--spacing) * 2);
+}

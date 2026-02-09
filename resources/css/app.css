@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import './components/btn.css';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -19,6 +21,7 @@
     --color-text-muted-dark: var(--color-gray-400);
 
     --color-accent: var(--color-emerald-400);
+    --color-accent-muted: var(--color-emerald-300);
 }
 
 

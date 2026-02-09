@@ -16,7 +16,7 @@
 <body class="flex flex-col min-h-dvh text-text dark:text-text-dark bg-background dark:bg-background-dark">
     <x-layout.nav />
 
-    <main class="flex-1 py-10 overflow-y-auto">
+    <main class="flex-1 flex py-10 overflow-y-auto">
         {{ $slot }}
     </main>
 </body>

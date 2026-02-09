@@ -8,6 +8,7 @@ use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class IdeaController extends Controller
 {
@@ -16,7 +17,7 @@ class IdeaController extends Controller
      */
     public function index(): View
     {
-        $ideas = Idea::latest()->get();
+        $ideas = Auth::user()->ideas()->latest()->get();
 
         return view('idea.index', [
             'ideas' => $ideas,
