@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script>
-        if (localStorage.getItem('darkMode') === 'true') {
+        if (localStorage.getItem('darkMode') !== 'false') {
             document.documentElement.classList.add('dark');
         }
     </script>
